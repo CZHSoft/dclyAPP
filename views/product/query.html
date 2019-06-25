@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>产品查询</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<style type="text/css">
+			.record {
+				padding: 10px;
+				height: 70vh;
+				/*border-style: solid;
+				border-width: 1px;*/
+				overflow: auto;
+			}
+			
+			.scanbtn {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">产品查询</h1>
+		</header>
+
+		<div class="mui-content">
+			<h5 style="padding: 5px;">查询记录:(只保存最近十条)</h5>
+			<div class="record">
+				<ul class="mui-table-view">
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="mui-table-view-cell">
+						<div class="mui-card" style="width: 320px;margin: 15px auto;">
+							<div class="mui-card-header mui-card-media">
+								<img src="../../images/logo_dcfz.png" />
+								<div class="mui-media-body">
+									用户
+									<p>查询于 2018-06-15 15:30</p>
+								</div>
+							</div>
+							<div class="mui-card-content">
+								这里是产品的描述清单，随便写。
+							</div>
+							<div class="mui-card-footer">
+								<a id="1" class="mui-card-link" href="javascript:void(0);" onclick="js_method(this.id)">删除</a>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+			<div class="scanbtn">
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="openScan()">
+					扫一扫
+				</button>
+			</div>
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+
+			function js_method(id) {
+				alert(id);
+			}
+
+			function openScan() {
+				
+				var id = "productscan";
+				var href = "scan.html";
+				var extras = {};
+				
+				var webview_style = {
+					popGesture: "close"
+				}
+				
+				var webview = plus.webview.create(href, id, webview_style);
+
+
+				webview.addEventListener("loaded", function() {
+					webview.show("none", 300, null, extras);
+				})
+			}
+		</script>
+	</body>
+
+</html>

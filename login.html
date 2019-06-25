@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			body {
+				background: url(images/login_background.png) repeat;
+				background-size: 100%;
+			}
+			
+			.mui-content {
+				text-align: center;
+			}
+			
+			.login-form {
+				border-radius: 20px;
+				width: 300px;
+				height: 150px;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			
+			.mui-input-row label~input {
+				float: left;
+				width: 35%;
+				background-color: transparent;
+			}
+			
+			.mui-input-row input {
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="content" class="mui-content">
+			<div class="login-form">
+				<form id='login-form' class="mui-input-group">
+					<div class="mui-input-row">
+						<label>账号</label>
+						<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					</div>
+					<div class="mui-input-row">
+						<label>密码</label>
+						<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					</div>
+				</form>
+				<div class="mui-content-padded">
+					<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+				</div>
+			</div>
+		</div>
+		<script src="common/js/state.js"></script>
+		<script src="common/js/ajax.js"></script>
+		<script src="common/js/muiPlus.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			function ready() {
+				
+				console.log("开始ready...");
+				
+				plus.screen.lockOrientation("portrait-primary");
+
+				// close splash
+				setTimeout(function() {
+					//关闭 splash
+					plus.navigator.closeSplashscreen();
+				}, 600);
+
+				console.log("ajax初始化...");
+				
+				ajaxInit(mui);
+
+				var loginButton = document.getElementById('login');
+				var accountBox = document.getElementById('account');
+				var passwordBox = document.getElementById('password');
+				
+				console.log("loginButton注册click...");
+				
+				loginButton.addEventListener('click', function(event) {
+					var loginInfo = {
+						account: accountBox.value,
+						password: passwordBox.value
+					};
+
+					function loginsuccess(data) {
+
+						console.log(data);
+
+						toMain();
+					};
+
+					function loginerror(xhr, type, errorThrown) {
+						//异常处理；
+						console.log(type);
+					};
+
+					//					ajaxSend(mui, '/api/test', 'post', loginInfo, 'json', [], loginsuccess, loginerror);
+
+					//					toMain();
+
+					console.log("模拟登陆成功。。。");
+
+					setState('userinfo', JSON.stringify(loginInfo));
+
+					muiCreateWindow(mui, "main.html", "main", "东成纺织");
+
+				});
+
+				var backButtonPress = 0;
+				
+				mui.back = function(event) {
+					backButtonPress++;
+					if(backButtonPress > 1) {
+						plus.runtime.quit();
+					} else {
+						plus.nativeUI.toast('再按一次退出应用');
+					}
+					setTimeout(function() {
+						backButtonPress = 0;
+					}, 1000);
+					return false;
+				};
+			}
+
+			muiPlusReady(mui, ready, "login");
+
+			clearState();
+		</script>
+	</body>
+
+</html>
